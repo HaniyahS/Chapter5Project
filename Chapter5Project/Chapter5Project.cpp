@@ -3,33 +3,46 @@
 
 #include <iostream>
 #include <fstream>
-#include <string>
+#include <random>
 
 using namespace std;
 int main()
 {
+	//Constants
+	const int min = 1, max = 500;
+	int guess, number, i = 0;
 
-    cout << "Pattern A:" << endl;
+	random_device engine;
 
-    for (int i = 0; i < 10; i++)
-    {
-        for (int p = 0; p <= i; p++)
-        {
-            cout << "+";
-        }
-        cout << endl;
-    }
+	uniform_int_distribution<int> num(min, max);
 
-    cout << "\nPattern B:" << endl;
-    for (int i = 0; i < 10; i++)
-    {
-        for (int p = 10; p > i; p--)
-        {
-            cout << "+";
-        }
-        cout << endl;
-    }
+	number = num(engine);
+	cout << "Guess a number from 1 - 500: ";
+	cin >> guess;
+	
+	while (guess != 0) {
+		if (guess < number) {
+			cout << "\nToo low. Press 0 to exit.\nGuess a number from 1 - 500: ";
+			cin >> guess;
+			i++;
+		}
 
-    return 0;
+		else if (guess == number) {
+		i++;
+		cout << "\nCongrats!! You guessed the number " << number;
+		cout << "\nAttempts: " << i;
+		}
 
+		else {
+			cout << "\nToo high. Press 0 to exit.\nGuess a number from 1 - 500: ";
+			cin >> guess;
+			i++;
+		}
+		
+
+	}
+	if (guess == 0) {
+		cout << "\nThe number was: " << number;
+		exit;
+	}
 }
