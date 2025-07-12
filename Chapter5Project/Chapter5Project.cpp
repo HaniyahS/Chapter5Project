@@ -9,44 +9,81 @@ using namespace std;
 int main()
 {
 
-	int year, pop, stars;
-	string word;
-	ifstream file("People.txt");
+	fstream Inputfile;
 
-	if (!file) {
-		cout << "Error: File could not be opened!" << std::endl;
-		return 1;
+	Inputfile.open("People.txt");
+
+	if (!Inputfile) 
+
+	{
+
+		cout << "Error opening file.";
+
+			return 0;
+
 	}
 
-	while (file >> pop) {
-		int stars = pop / 1000;
-		int p = 0;
-		p++;
+	int pop;
 
-		
+	
+		for (int Year = 1; Year <= 6; Year++)
 
-		for(int i = 0; i < 6; i++) {
-			year = 1900 + (20 * i);
-			cout << year;
-			
-			
-			
-			continue;
+		{ 
+
+			switch (Year)
+
+			{
+
+			case 1: cout << "1900 ";
+
+				break;
+
+			case 2: cout << "1920 ";
+
+				break;
+
+			case 3: cout << "1940 ";
+
+				break;
+
+			case 4: cout << "1960 ";
+
+				break;
+
+			case 5: cout << "1980 ";
+
+				break;
+
+			case 6: cout << "2000 ";
+
+				break;
+
+			}
+
+			Inputfile >> pop; 
+
+
+			while (pop > 0)
+
+			{ 
+
 			
 
-		}
+				cout << "*";
 
-		for (int s = 0; s < stars; s++) {
-			cout << "*";
-			
+				pop -= 1000;
 
-			
 			}
 
 			cout << endl;
-		
 
-	}
+		}
+
+	Inputfile.close(); 
+
+	return 0;
+
+
 
 
 }
