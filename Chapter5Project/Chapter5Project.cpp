@@ -4,34 +4,49 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <vector>
 
 using namespace std;
 int main()
 {
-	string student, first, last, word;
-	int i = 0;
 
-    vector<std::string> words;
-    ifstream file("LineUp.txt");
-    if (!file) {
-        cout << "Error: File could not be opened!" << std::endl;
-        return 1;
-    }
+	int year, pop, stars;
+	string word;
+	ifstream file("People.txt");
 
-    
+	if (!file) {
+		cout << "Error: File could not be opened!" << std::endl;
+		return 1;
+	}
 
-    string line;
-    cout << "Names from file:\n";
-    while (getline(file,line)) { // Read character by line
-        cout  << line << "\n"; // Print each line
-        line = student;
-        i++;
-    }
-    cout << "\nNumber of students: " << i;
+	while (file >> pop) {
+		int stars = pop / 1000;
+		int p = 0;
+		p++;
 
-  
-    cout << "\nfirst student: " << first << "\nlast student: " << last;
-    file.close();
-    return 0;
+		
+
+		for(int i = 0; i < 6; i++) {
+			year = 1900 + (20 * i);
+			cout << year;
+			
+			
+			
+			continue;
+			
+
+		}
+
+		for (int s = 0; s < stars; s++) {
+			cout << "*";
+			
+
+			
+			}
+
+			cout << endl;
+		
+
+	}
+
+
 }
