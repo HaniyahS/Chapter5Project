@@ -15,7 +15,7 @@ int main()
     {
         for (int p = 0; p <= i; p++)
         {
-            cout << "*";
+            cout << "+";
         }
         cout << endl;
     }
@@ -25,7 +25,7 @@ int main()
     {
         for (int p = 10; p > i; p--)
         {
-            cout << "*";
+            cout << "+";
         }
         cout << endl;
     }
