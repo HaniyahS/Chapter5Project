@@ -19,7 +19,8 @@ int main()
 	number = num(engine);
 	cout << "Guess a number from 1 - 500: ";
 	cin >> guess;
-	
+	i++;
+
 	while (guess != 0) {
 		if (guess < number) {
 			cout << "\nToo low. Press 0 to exit.\nGuess a number from 1 - 500: ";
@@ -28,9 +29,10 @@ int main()
 		}
 
 		else if (guess == number) {
-		i++;
 		cout << "\nCongrats!! You guessed the number " << number;
+		i++;
 		cout << "\nAttempts: " << i;
+		break;
 		}
 
 		else {
@@ -41,8 +43,10 @@ int main()
 		
 
 	}
+
 	if (guess == 0) {
 		cout << "\nThe number was: " << number;
+		cout << "\nAttempts: " << i;
 		exit;
 	}
 }
