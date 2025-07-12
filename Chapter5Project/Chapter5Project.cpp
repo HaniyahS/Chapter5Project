@@ -9,44 +9,27 @@ using namespace std;
 int main()
 {
 
-	int year, pop, stars;
-	string word;
-	ifstream file("People.txt");
+    cout << "Pattern A:" << endl;
 
-	if (!file) {
-		cout << "Error: File could not be opened!" << std::endl;
-		return 1;
-	}
+    for (int i = 0; i < 10; i++)
+    {
+        for (int p = 0; p <= i; p++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
 
-	while (file >> pop) {
-		int stars = pop / 1000;
-		int p = 0;
-		p++;
+    cout << "\nPattern B:" << endl;
+    for (int i = 0; i < 10; i++)
+    {
+        for (int p = 10; p > i; p--)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
 
-		
-
-		for(int i = 0; i < 6; i++) {
-			year = 1900 + (20 * i);
-			cout << year;
-			
-			
-			
-			continue;
-			
-
-		}
-
-		for (int s = 0; s < stars; s++) {
-			cout << "*";
-			
-
-			
-			}
-
-			cout << endl;
-		
-
-	}
-
+    return 0;
 
 }
