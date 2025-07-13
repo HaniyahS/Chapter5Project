@@ -23,14 +23,17 @@ int main()
 
     string line;
     cout << "Names from file:\n";
-    while (getline(file,line)) { // Read character by line
-        cout  << line << "\n"; // Print each line
-        line = student = last = first;
-        if (student < last) {
-            student = last;
+    while (getline(file,line)) {
+        
+        cout  << line << "\n";
+        cin >> (getline(file,line));
+        line = first = last;
+       
+        if (line < last) {
+            last = line;
         }
-        if (student > first) {
-            student = first;
+        if (line > first) {
+            first = line;
         }
         i++;
     }
