@@ -35,7 +35,7 @@ int main()
 
 	for (int i = 0; i <= days; i++) {
 		result = increase / 100;
-		pop = start + (1 + result * i);
+		pop = start * (1 + result * i);
 		cout << i << "\t\t" << pop << "\n";
 	}
 }
