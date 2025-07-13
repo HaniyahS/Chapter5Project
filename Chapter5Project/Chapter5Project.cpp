@@ -25,7 +25,13 @@ int main()
     cout << "Names from file:\n";
     while (getline(file,line)) { // Read character by line
         cout  << line << "\n"; // Print each line
-        line = student;
+        line = student = last = first;
+        if (student < last) {
+            student = last;
+        }
+        if (student > first) {
+            student = first;
+        }
         i++;
     }
     cout << "\nNumber of students: " << i;
