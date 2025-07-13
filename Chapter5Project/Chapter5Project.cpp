@@ -8,6 +8,13 @@
 using namespace std;
 int main()
 {
+	string filename, town;
+	
+
+	cout << "File name: ";
+	cin >> filename;
+	cout << "\nName of town: ";
+	cin >> town;
 
 	fstream Inputfile;
 
@@ -25,11 +32,11 @@ int main()
 
 	int pop;
 
-	
+	cout << "\n" << town << " population data\n";
 		for (int Year = 1; Year <= 6; Year++)
 
 		{ 
-
+			
 			switch (Year)
 
 			{
