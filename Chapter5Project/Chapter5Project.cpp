@@ -24,7 +24,7 @@ int main()
     string line;
     cout << "Names from file:\n";
     first = last = line;
-    i = 0;
+    i = 1;
     while (getline(file,line)) {
         
         cout  << line << "\n";
