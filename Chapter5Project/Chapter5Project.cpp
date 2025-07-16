@@ -13,8 +13,9 @@ int main()
 
 	cout << "File name: ";
 	cin >> filename;
+	cin.ignore();
 	cout << "\nName of town: ";
-	cin >> town;
+	getline(cin, town);
 
 	fstream Inputfile;
 
@@ -31,50 +32,17 @@ int main()
 	}
 
 	int pop;
-
+	int startYear = 1900;
+	int yearInterval = 20;
 	cout << "\n" << town << " population data\n";
 		for (int Year = 1; Year <= 6; Year++)
 
 		{ 
-			
-			switch (Year)
-
-			{
-
-			case 1: cout << "1900 ";
-
-				break;
-
-			case 2: cout << "1920 ";
-
-				break;
-
-			case 3: cout << "1940 ";
-
-				break;
-
-			case 4: cout << "1960 ";
-
-				break;
-
-			case 5: cout << "1980 ";
-
-				break;
-
-			case 6: cout << "2000 ";
-
-				break;
-
-			}
-
-			Inputfile >> pop; 
-
-
+			cout << "Year " << startYear + (yearInterval * (Year - 1)) << ": ";
+			Inputfile >> pop;
 			while (pop > 0)
 
 			{ 
-
-			
 
 				cout << "*";
 
