@@ -23,6 +23,7 @@ int main()
 
     string line;
     cout << "Names from file:\n";
+    getline(file, line);
     first = last = line;
     i = 1;
     while (getline(file,line)) {
@@ -30,10 +31,10 @@ int main()
         cout  << line << "\n";
         
        
-        if (line < last) {
+        if (line > last) {
             last = line;
         }
-        if (line > first) {
+        if (line < first) {
             first = line;
         }
         i++;
